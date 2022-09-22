@@ -4,7 +4,11 @@
   "description": "A front-end component to show a panel with browsable lists for a topic",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "dotcom-tool-kit test:local",
+    "format": "dotcom-tool-kit format:local",
+    "build": "dotcom-tool-kit build:local",
+    "start": "dotcom-tool-kit run:local",
+    "heroku-postbuild": "dotcom-tool-kit build:remote release:remote cleanup:remote"
   },
   "repository": {
     "type": "git",
@@ -15,5 +19,11 @@
   "bugs": {
     "url": "https://github.com/Financial-Times/n-browsable-lists/issues"
   },
-  "homepage": "https://github.com/Financial-Times/n-browsable-lists#readme"
+  "homepage": "https://github.com/Financial-Times/n-browsable-lists#readme",
+  "devDependencies": {
+    "dotcom-tool-kit": "1.9.0",
+    "@dotcom-tool-kit/frontend-app": "1.9.0",
+    "@dotcom-tool-kit/prettier": "1.9.0",
+    "@dotcom-tool-kit/lint-staged": "1.9.0"
+  }
 }
