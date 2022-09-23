@@ -1,7 +1,17 @@
 plugins:
-  - '@dotcom-tool-kit/frontend-app'
+  - '@dotcom-tool-kit/circleci-npm'
+  - '@dotcom-tool-kit/circleci'
   - '@dotcom-tool-kit/eslint'
+  - '@dotcom-tool-kit/lint-staged-npm'
+  - '@dotcom-tool-kit/npm'
   - '@dotcom-tool-kit/prettier'
-  - '@dotcom-tool-kit/lint-staged'
-hooks: {}
+
+hooks:
+  'test:local':
+    - 'Eslint'
+  'test:ci':
+    - 'Eslint'
+  git:precommit:
+    - LintStaged
+
 options: {}

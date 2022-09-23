@@ -3,3 +3,5 @@ node_modules/
 
 # Toolkit state files
 /.toolkitstate
+
+dist
