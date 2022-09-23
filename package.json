@@ -39,5 +39,8 @@
   },
   "lint-staged": {
     "**/*.js": "dotcom-tool-kit format:staged test:staged --"
+  },
+  "dependencies": {
+    "@financial-times/n-concept-ids": "^1.21.0"
   }
 }
