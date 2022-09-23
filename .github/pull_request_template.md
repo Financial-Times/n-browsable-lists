@@ -17,9 +17,9 @@
 Have you completed these common tasks? (remove those that don't apply)
 
 - [ ] **Documentation** updated or created
-- [ ] **Tests** written for new or updated for existing functionality
+- [ ] **Tests** written for new (or updated for existing) functionality
 - [ ] **Manual Testing** checked the expected functionality
-- [ ] **Guidance for reviewer** communicated expected changes / behaviour
+- [ ] **Guidance for reviewer** communicated expected changes / behaviour, and how reviewers can test it
 - [ ] **Accessibility** checked for screen readers and contrast
 - [ ] **Design Review** ran past the designer 
 - [ ] **Product Review** ran past the product owner
