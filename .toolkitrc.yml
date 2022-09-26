@@ -5,6 +5,7 @@ plugins:
   - '@dotcom-tool-kit/lint-staged-npm'
   - '@dotcom-tool-kit/npm'
   - '@dotcom-tool-kit/prettier'
+  - '@dotcom-tool-kit/webpack'
 
 hooks:
   'test:local':
@@ -13,5 +14,10 @@ hooks:
     - 'Eslint'
   git:precommit:
     - LintStaged
+  'build:local':
+    - WebpackDevelopment
 
-options: {}
+options:
+  '@dotcom-tool-kit/webpack':
+    configPath: demos/webpack.config.js
+
