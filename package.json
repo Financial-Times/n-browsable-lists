@@ -2,12 +2,13 @@
   "name": "@financial-times/n-browsable-lists",
   "version": "0.0.0",
   "description": "A front-end component to show a panel with browsable lists for a topic",
-  "main": "index.js",
+  "main": "index.jsx",
   "scripts": {
     "test": "dotcom-tool-kit test:local",
     "format": "dotcom-tool-kit format:local",
     "build": "dotcom-tool-kit build:local",
     "start": "dotcom-tool-kit run:local",
+    "demo": "concurrently -n webpack,node \"npm run start\" \"node demos/start.js\"",
     "heroku-postbuild": "dotcom-tool-kit build:remote release:remote cleanup:remote"
   },
   "repository": {
@@ -36,6 +37,7 @@
     "cookie-parser": "^1.4.6",
     "dotcom-tool-kit": "^2.3.5",
     "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-react": "^7.31.8",
     "express": "^4.18.1",
     "install": "^0.13.0",
     "npm": "^8.19.2",

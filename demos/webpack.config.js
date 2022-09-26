@@ -7,11 +7,7 @@ module.exports = {
 		descriptionFiles: ['package.json']
 	},
 	entry: {
-		bundle: './demos/src/demo.js',
 		styles: './demos/src/demo.scss'
 	},
-	plugins: [new PageKitSassPlugin()],
-	output: {
-		path: __dirname + '/public/'
-	}
+	plugins: [new PageKitSassPlugin()]
 };
