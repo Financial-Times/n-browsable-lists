@@ -22,6 +22,9 @@
   },
   "homepage": "https://github.com/Financial-Times/n-browsable-lists#readme",
   "devDependencies": {
+    "@babel/core": "^7.19.1",
+    "@babel/plugin-syntax-jsx": "^7.18.6",
+    "@babel/preset-env": "^7.19.1",
     "@dotcom-tool-kit/circleci": "^2.1.6",
     "@dotcom-tool-kit/circleci-npm": "^2.0.9",
     "@dotcom-tool-kit/eslint": "^2.2.1",
@@ -33,6 +36,7 @@
     "@financial-times/dotcom-server-react-jsx": "^7.1.1",
     "@financial-times/dotcom-ui-shell": "^7.1.1",
     "@financial-times/eslint-config-next": "^6.0.0",
+    "babel-loader": "^8.2.5",
     "concurrently": "^7.4.0",
     "cookie-parser": "^1.4.6",
     "dotcom-tool-kit": "^2.3.5",

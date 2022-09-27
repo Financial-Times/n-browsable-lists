@@ -9,5 +9,22 @@ module.exports = {
 	entry: {
 		styles: './demos/src/demo.scss'
 	},
-	plugins: [new PageKitSassPlugin()]
+	module: {
+		rules: [
+			{
+				test: /\.jsx$/,
+				exclude: /(node_modules)/,
+				use: {
+					loader: 'babel-loader',
+					options: {
+						presets: [['@babel/preset-env', { targets: 'defaults' }]]
+					}
+				}
+			}
+		]
+	},
+	plugins: [new PageKitSassPlugin()],
+	output: {
+		path: __dirname + '/public/'
+	}
 };
