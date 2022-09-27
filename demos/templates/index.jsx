@@ -5,10 +5,14 @@ import { BrowsableLists } from '../../';
 export default function MainTemplate() {
 	return (
 		<Shell siteTitle={`Browsable lists demo`}>
+			<link rel="stylesheet" href="./public/styles.css"/>
 			<main>
-				<link rel="stylesheet" href="./public/styles.css"/>
-				<h1 className="demo-header">Browsable lists component</h1>
-				<BrowsableLists />
+				<div className='content'>
+					<h1 className="demo-header">Browsable lists component</h1>
+				</div>
+				<aside className='rhr'>
+					<BrowsableLists />
+				</aside>
 			</main>
 		</Shell>
 	)

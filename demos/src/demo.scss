@@ -1,3 +1,13 @@
 $system-code: 'n-browsable-lists';
 
 @import '../../main';
+
+main {
+	display: grid;
+	grid-template-columns: 1fr auto;
+	width: 100%;
+
+	.rhr {
+		max-width: 300px;
+	}
+}
