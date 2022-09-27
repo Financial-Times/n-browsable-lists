@@ -59,5 +59,10 @@
   },
   "dependencies": {
     "@financial-times/n-concept-ids": "^1.21.0"
+  },
+  "peerDependencies": {
+    "@financial-times/o-colors": "^6.4.2",
+    "@financial-times/o-icons": "^7.4.0",
+    "@financial-times/o-typography": "^7.3.2"
   }
 }

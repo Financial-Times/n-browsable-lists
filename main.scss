@@ -1,1 +1,73 @@
 $system-code: 'n-browsable-lists';
+
+@import "@financial-times/o-icons/main";
+
+@import "@financial-times/o-colors/main";
+@include oColors();
+
+$o-typography-load-fonts: false;
+@import '@financial-times/o-typography/main';
+@include oTypography((
+	'links': true,
+));
+
+.browsable-lists {
+	font-family: 'MetricWeb';
+	background: oColorsByName('white-40');
+	border: 1px solid oColorsByName('black-10');
+	padding: 12px;
+
+	&-heading {
+		@include oTypographySans($scale: -1, $weight: 'regular');
+		margin: 0;
+		line-height: 20px;
+		border-bottom: 1px solid oColorsByName('claret-50');
+	}
+
+	&-title {
+		color: oColorsByName('claret');
+
+		&-heading {
+			margin-bottom: 0;
+			@include oTypographySans($scale: 0, $weight: 'semibold');
+			color: oColorsByName('claret');
+
+			&::before {
+				content: '';
+				@include oIconsContent (
+					$icon-name: 'list',
+					$size: 20,
+					$color: oColorsByName('claret'),
+				);
+				margin-right: 4px;
+				color: oColorsByName('claret');
+				vertical-align: middle;
+			}
+		}
+
+		&-text {
+			margin: 0 0 0 24px;
+			color: oColorsByName('black-60');
+			@include oTypographySans($scale: -2, $weight: 'regular');
+		}
+	}
+
+	&-list {
+		list-style-type: none;
+		padding: 0;
+
+		&-item:not(:last-child) {
+			border-bottom: 1px solid oColorsByName('black-10');
+			padding-bottom: 12px;
+		}
+
+		&-item {
+			margin-bottom: 16px;
+			a {
+				text-decoration-line: unset;
+				@include oTypographySans($scale: 0, $weight: 'regular');
+				color: oColorsByName('black-80');
+			}
+		}
+	}
+}
