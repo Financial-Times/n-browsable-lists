@@ -1,6 +1,6 @@
 import React from 'react';
 import { Shell } from '@financial-times/dotcom-ui-shell';
-import BrowsableLists from '../../';
+import { BrowsableLists } from '../../';
 
 export default function MainTemplate() {
 	return (
