@@ -27,6 +27,10 @@ $o-typography-load-fonts: false;
 	&-title {
 		color: oColorsByName('claret');
 
+		a {
+			text-decoration: none;
+		}
+
 		&-heading {
 			margin-bottom: 0;
 			@include oTypographySans($scale: 0, $weight: 'semibold');

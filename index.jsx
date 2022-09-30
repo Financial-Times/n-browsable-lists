@@ -40,7 +40,7 @@ export function BrowsableLists () {
 		<div className='browsable-lists'>
 			<h2 className='browsable-lists-heading'>Curated list by a university professor</h2>
 			<div className='browsable-lists-title'>
-				<h3 className='browsable-lists-title-heading'>{listData.name}</h3>
+				<a href={`https://www.ft.com/myft/list/${listData.uuid}`}><h3 className='browsable-lists-title-heading'>{listData.name}</h3></a>
 				<p className='browsable-lists-title-text'>{listData.items.length} Saved articles</p>
 			</div>
 			<ul className='browsable-lists-list'>
