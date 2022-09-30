@@ -1,24 +1,18 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { conceptListMap } from './concept-list-map';
-// const myFtApi = require('next-myft-client');
 
-const concepts = [
-	'24ad2c58-14fb-4217-b6f7-7ef88ac51375'
-]
+BrowsableLists.propTypes = {
+  concepts: PropTypes.array.isRequired
+};
 
-// async function fetchListContent (listId) {
-// 	return myFtApi.getAllRelationship('list', listId, 'contained', 'content');
-// };
-// https://github.com/Financial-Times/next-myft-page/blob/main/server/lib/fetch-list-content.js
-
-export function BrowsableLists () {
+export function BrowsableLists ({ concepts }) {
 	const matchedList = conceptListMap.find(pair => pair.conceptId === concepts[0]);
 
 	if (!matchedList) {
 		return <div/>
 	}
 
-	// list id , list name, list of articles with titles
 	const listData = {
 		uuid: matchedList.listId,
 		name: 'Climate Change Reading List',
