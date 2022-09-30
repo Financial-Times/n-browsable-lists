@@ -7,6 +7,10 @@ BrowsableLists.propTypes = {
 };
 
 export function BrowsableLists ({ concepts }) {
+	if (!Array.isArray(concepts)) {
+		return <div/>
+	}
+
 	const matchedList = conceptListMap.find(pair => pair.conceptId === concepts[0]);
 
 	if (!matchedList) {
