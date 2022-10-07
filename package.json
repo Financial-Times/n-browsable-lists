@@ -8,7 +8,7 @@
     "format": "dotcom-tool-kit format:local",
     "build": "dotcom-tool-kit build:local",
     "start": "dotcom-tool-kit run:local",
-    "demo": "concurrently -n webpack,node \"npm run start\" \"node demos/start.js\"",
+    "demo": "concurrently -n webpack,node \"npm run start\" \"nodemon -e js,mjs,json,jsx demos/start.js\"",
     "heroku-postbuild": "dotcom-tool-kit build:remote release:remote cleanup:remote"
   },
   "repository": {
@@ -44,6 +44,7 @@
     "eslint-plugin-react": "^7.31.8",
     "express": "^4.18.1",
     "install": "^0.13.0",
+    "nodemon": "^2.0.20",
     "npm": "^8.19.2",
     "react": "^16.14.0",
     "sucrase": "^3.27.0"
