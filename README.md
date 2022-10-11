@@ -1,25 +1,36 @@
 # n-browsable-lists
 
-Client side component to show a panel with browsable lists for a topic
+Component to show a panel with browsable lists for a concept. It should be imported on the article page and shown on the right-hand rail below the concept list component.
 
-This component will be imported on the article page and shown on the right-hand rail below the concept list component.
+This component has been designed as part of the Browsable Lists A/B test. Therefore, our approach was to have a self-contained component. This means that we expect this component to receive a list of concepts and return the server-side markup, its stylesheets and a client-side module that'll determine which list to show, fetch its data, and re-render the markup with this data. 
 
 ## How to use in a consuming app
 
-
+Import the component and add it to the consumer's markup, passing it a `concepts` prop:
 ```
 import { BrowsableLists } from '@financial-times/n-browsable-lists';
 
 <>
 	...
-	<BrowsableLists />
+	<BrowsableLists concepts={concepts} />
 	...
 </>
 ```
 
-Import the styles into main.scss, as set the min width for desktop styling (to match the rest of the app):
+Import the styles into consumer's `main.scss`
 ```
-@import '@financial-times/n-myft-dropdown/main';
+@import '@financial-times/n-browsable-lists/main';
+```
+
+Import the client-side code into the consumer's `main.js` and initialised it, passing it the parent's selector as argument
+
+```
+const { init: browsableListsInit } = require('../../main.js');
+
+browsableListsInit({
+	parentSelector: '.rhr'
+});
+
 ```
 
 ## Developing
