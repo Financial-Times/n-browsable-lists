@@ -12,7 +12,7 @@ const renderer = new PageKitReactJSX();
 app.engine('jsx', renderer.engine);
 
 app.get('/', (req, res) => {
-	return res.render('index.jsx', { layout: 'custom-vanilla', title: 'Demo' });
+	return res.render('main.jsx', { layout: 'custom-vanilla', title: 'Demo' });
 });
 
 module.exports = app;
