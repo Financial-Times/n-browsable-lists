@@ -25,6 +25,7 @@
     "@babel/core": "^7.19.1",
     "@babel/plugin-syntax-jsx": "^7.18.6",
     "@babel/preset-env": "^7.19.1",
+    "@babel/preset-react": "^7.18.6",
     "@dotcom-tool-kit/circleci": "^2.1.6",
     "@dotcom-tool-kit/circleci-npm": "^2.0.9",
     "@dotcom-tool-kit/eslint": "^2.2.1",
@@ -59,7 +60,9 @@
     "**/*.js": "dotcom-tool-kit format:staged test:staged --"
   },
   "dependencies": {
-    "@financial-times/n-concept-ids": "^1.21.0"
+    "@financial-times/n-concept-ids": "^1.21.0",
+    "next-myft-client": "^10.3.0",
+    "react-dom": "^16.14.0"
   },
   "peerDependencies": {
     "@financial-times/o-colors": "^6.4.2",
