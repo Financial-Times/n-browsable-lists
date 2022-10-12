@@ -66,24 +66,24 @@
     "@financial-times/n-concept-ids": "^1.21.0",
     "@financial-times/x-engine": "^8.1.0",
     "next-myft-client": "^10.3.0",
-    "react-dom": "^16.14.0"
+    "react-dom": "16.14"
   },
   "peerDependencies": {
     "@financial-times/o-colors": "^6.4.2",
     "@financial-times/o-icons": "^7.4.0",
     "@financial-times/o-typography": "^7.3.2"
   },
-	"x-dash": {
-		"engine": {
-			"server": {
-				"runtime": "react",
-				"factory": "createElement",
-				"component": "Component",
-				"fragment": "Fragment",
-				"renderModule": "react-dom/server",
-				"render": "render"
-			},
-			"browser": "preact"
-		}
-	}
+  "x-dash": {
+    "engine": {
+      "server": {
+        "runtime": "react",
+        "factory": "createElement",
+        "component": "Component",
+        "fragment": "Fragment",
+        "renderModule": "react-dom/server",
+        "render": "render"
+      },
+      "browser": "preact"
+    }
+  }
 }
