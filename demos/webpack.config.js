@@ -1,4 +1,19 @@
+const xEngine = require('@financial-times/x-engine/src/webpack');
+
+const { PageKitBasePlugin } = require('@financial-times/dotcom-build-base');
+const { PageKitJsPlugin } = require('@financial-times/dotcom-build-js');
 const { PageKitSassPlugin } = require('@financial-times/dotcom-build-sass');
+const {
+	PageKitCodeSplittingPlugin
+} = require('@financial-times/dotcom-build-code-splitting');
+
+const plugins = [
+	new PageKitBasePlugin(),
+	new PageKitJsPlugin(),
+	new PageKitSassPlugin(),
+	new PageKitCodeSplittingPlugin(),
+	xEngine()
+];
 
 module.exports = {
 	mode: 'development',
@@ -27,7 +42,7 @@ module.exports = {
 			}
 		]
 	},
-	plugins: [new PageKitSassPlugin()],
+	plugins,
 	output: {
 		path: __dirname + '/public/'
 	}

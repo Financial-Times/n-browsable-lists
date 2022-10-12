@@ -33,6 +33,9 @@
     "@dotcom-tool-kit/npm": "^2.0.9",
     "@dotcom-tool-kit/prettier": "^2.0.9",
     "@dotcom-tool-kit/webpack": "^2.1.7",
+    "@financial-times/dotcom-build-base": "^7.1.1",
+    "@financial-times/dotcom-build-code-splitting": "^7.1.1",
+    "@financial-times/dotcom-build-js": "^7.1.1",
     "@financial-times/dotcom-build-sass": "^7.1.1",
     "@financial-times/dotcom-server-react-jsx": "^7.1.1",
     "@financial-times/dotcom-ui-shell": "^7.1.1",
@@ -61,6 +64,7 @@
   },
   "dependencies": {
     "@financial-times/n-concept-ids": "^1.21.0",
+    "@financial-times/x-engine": "^8.1.0",
     "next-myft-client": "^10.3.0",
     "react-dom": "^16.14.0"
   },
@@ -68,5 +72,18 @@
     "@financial-times/o-colors": "^6.4.2",
     "@financial-times/o-icons": "^7.4.0",
     "@financial-times/o-typography": "^7.3.2"
-  }
+  },
+	"x-dash": {
+		"engine": {
+			"server": {
+				"runtime": "react",
+				"factory": "createElement",
+				"component": "Component",
+				"fragment": "Fragment",
+				"renderModule": "react-dom/server",
+				"render": "render"
+			},
+			"browser": "preact"
+		}
+	}
 }
