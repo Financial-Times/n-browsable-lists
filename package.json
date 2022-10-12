@@ -25,7 +25,6 @@
     "@babel/core": "^7.19.1",
     "@babel/plugin-syntax-jsx": "^7.18.6",
     "@babel/preset-env": "^7.19.1",
-    "@babel/preset-react": "^7.18.6",
     "@dotcom-tool-kit/circleci": "^2.1.6",
     "@dotcom-tool-kit/circleci-npm": "^2.0.9",
     "@dotcom-tool-kit/eslint": "^2.2.1",
@@ -33,14 +32,12 @@
     "@dotcom-tool-kit/npm": "^2.0.9",
     "@dotcom-tool-kit/prettier": "^2.0.9",
     "@dotcom-tool-kit/webpack": "^2.1.7",
-    "@financial-times/dotcom-build-base": "^7.1.1",
-    "@financial-times/dotcom-build-code-splitting": "^7.1.1",
-    "@financial-times/dotcom-build-js": "^7.1.1",
     "@financial-times/dotcom-build-sass": "^7.1.1",
     "@financial-times/dotcom-server-react-jsx": "^7.1.1",
     "@financial-times/dotcom-ui-shell": "^7.1.1",
     "@financial-times/eslint-config-next": "^6.0.0",
     "babel-loader": "^8.2.5",
+    "babel-preset-preact": "^2.0.0",
     "concurrently": "^7.4.0",
     "cookie-parser": "^1.4.6",
     "dotcom-tool-kit": "^2.3.5",
@@ -50,6 +47,8 @@
     "install": "^0.13.0",
     "nodemon": "^2.0.20",
     "npm": "^8.19.2",
+    "preact": "^8.5.3",
+    "preact-render-to-string": "^4.1.0",
     "react": "^16.14.0",
     "sucrase": "^3.27.0"
   },
@@ -66,7 +65,7 @@
     "@financial-times/n-concept-ids": "^1.21.0",
     "@financial-times/x-engine": "^8.1.0",
     "next-myft-client": "^10.3.0",
-    "react-dom": "16.14"
+    "react-dom": "^16.14.0"
   },
   "peerDependencies": {
     "@financial-times/o-colors": "^6.4.2",
@@ -81,7 +80,7 @@
         "component": "Component",
         "fragment": "Fragment",
         "renderModule": "react-dom/server",
-        "render": "render"
+        "render": "renderToStaticMarkup"
       },
       "browser": "preact"
     }
