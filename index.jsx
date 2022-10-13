@@ -1,1 +1,1 @@
-export * from './BrowsableLists.jsx'
+export { BrowsableListsData as BrowsableLists } from './BrowsableListsData.jsx'

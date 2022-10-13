@@ -3,11 +3,11 @@ import PropTypes from 'prop-types';
 // eslint-disable-next-line no-unused-vars
 import { h } from '@financial-times/x-engine';
 
-BrowsableList.propTypes = {
+BrowsableListsContent.propTypes = {
   listData: PropTypes.object.isRequired,
 };
 
-export function BrowsableList ({ listData }) {
+export function BrowsableListsContent ({ listData }) {
 	if (listData) {
 		return (
 			<div className='browsable-lists'>

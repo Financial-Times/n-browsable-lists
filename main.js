@@ -3,7 +3,7 @@ import * as dataEmbed from '@financial-times/dotcom-ui-data-embed';
 import myftClient from 'next-myft-client';
 
 import { conceptListMap } from './concept-list-map';
-import { BrowsableList } from './BrowsableList.jsx';
+import { BrowsableListsContent } from './BrowsableListsContent.jsx';
 
 // eslint-disable-next-line no-unused-vars
 import { h, render } from '@financial-times/x-engine';
@@ -50,6 +50,6 @@ export async function init({ parentSelector }) {
 				})
 			);
 
-		render(<BrowsableList listData={listData} />, container);
+		render(<BrowsableListsContent listData={listData} />, container);
 	}
 }
