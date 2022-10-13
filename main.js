@@ -17,8 +17,9 @@ export async function init({ parentSelector }) {
 	if (container && concepts) {
 		const matchedList =
 			Array.isArray(concepts) &&
-			concepts.length &&
-			conceptListMap.find((pair) => pair.conceptId === concepts[0]);
+			concepts.find((concept) =>
+				conceptListMap.find((pair) => pair.conceptId === concept)
+			);
 
 		const listId = matchedList?.listId;
 
