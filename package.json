@@ -64,7 +64,7 @@
   "dependencies": {
     "@financial-times/n-concept-ids": "^1.21.0",
     "@financial-times/x-engine": "^8.1.0",
-    "next-myft-client": "^10.3.0",
+    "next-myft-client": "^10.4.0",
     "react-dom": "^16.14.0"
   },
   "peerDependencies": {
