@@ -13,12 +13,12 @@ export function BrowsableListsContent ({ listData }) {
 			<div className='browsable-lists'>
 				<h2 className='browsable-lists-heading'>Curated list by a university professor</h2>
 				<div className='browsable-lists-title'>
-					<a href={`https://www.ft.com/myft/public-list/${listData.uuid}`}><h3 className='browsable-lists-title-heading'>{listData.name}</h3></a>
+					<a href={`https://www.ft.com/myft/list/${listData.id}`}><h3 className='browsable-lists-title-heading'>{listData.name}</h3></a>
 					<p className='browsable-lists-title-text'>{listData.articleData.length} Saved articles</p>
 				</div>
 				<ul className='browsable-lists-list'>
 					{listData.articleData.slice(0,4).map((article, id) => (
-						<li key={id} className='browsable-lists-list-item'><a href={`https://www.ft.com/content/${article.uuid}`}>{article.title}</a></li>
+						<li key={id} className='browsable-lists-list-item'><a href={`https://www.ft.com/content/${article.id}`}>{article.title}</a></li>
 					))}
 				</ul>
 			</div>
