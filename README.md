@@ -40,10 +40,11 @@ To run it locally using its demo page:
 git clone git@github.com:Financial-Times/n-browsable-lists.git
 cd n-browsable-lists
 npm install
+npm run certs
 npm run demo
 ```
 
-When you run the last command command, it starts two processes: one with Node running an express server to serve the demo page on `http://localhost:3000`, and the other one with the `WebpackWatch` task to watch for changes on the `css`, `js` files.
+When you run the last command command, it starts two processes: one with Node running an express server to serve the demo page on `https://local.ft.com:5005`, and the other one with the `WebpackWatch` task to watch for changes on the `css`, `js` files.
 
 To run it locally in the consuming app, run these first:
 

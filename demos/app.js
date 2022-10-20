@@ -1,6 +1,7 @@
 import express from 'express';
 import cookieParser from 'cookie-parser';
 import { PageKitReactJSX } from '@financial-times/dotcom-server-react-jsx';
+import proxy from 'express-http-proxy';
 
 const app = express();
 app.use(cookieParser());
@@ -14,5 +15,7 @@ app.engine('jsx', renderer.engine);
 app.get('/', (req, res) => {
 	return res.render('main.jsx', { layout: 'custom-vanilla', title: 'Demo' });
 });
+
+app.all('/__myft/*', proxy('https://www.ft.com/__myft/'));
 
 module.exports = app;
