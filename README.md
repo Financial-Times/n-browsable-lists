@@ -40,7 +40,6 @@ To run it locally using its demo page:
 git clone git@github.com:Financial-Times/n-browsable-lists.git
 cd n-browsable-lists
 npm install
-npm run certs
 npm run demo
 ```
 
