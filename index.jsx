@@ -1,7 +1,1 @@
-import React from 'react';
-
-export function BrowsableLists () {
-	return (
-		<div></div>
-	)
-}
+export { BrowsableListsData as BrowsableLists } from './BrowsableListsData.jsx'

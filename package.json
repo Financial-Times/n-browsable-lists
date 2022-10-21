@@ -8,7 +8,7 @@
     "format": "dotcom-tool-kit format:local",
     "build": "dotcom-tool-kit build:local",
     "start": "dotcom-tool-kit run:local",
-    "demo": "concurrently -n webpack,node \"npm run start\" \"node demos/start.js\"",
+    "demo": "./demos/make-certs.sh && concurrently -n webpack,node \"npm run start\" \"nodemon -e js,mjs,json,jsx demos/start.js\"",
     "heroku-postbuild": "dotcom-tool-kit build:remote release:remote cleanup:remote"
   },
   "repository": {
@@ -37,14 +37,19 @@
     "@financial-times/dotcom-ui-shell": "^7.1.1",
     "@financial-times/eslint-config-next": "^6.0.0",
     "babel-loader": "^8.2.5",
+    "babel-preset-preact": "^2.0.0",
     "concurrently": "^7.4.0",
     "cookie-parser": "^1.4.6",
     "dotcom-tool-kit": "^2.3.5",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-react": "^7.31.8",
     "express": "^4.18.1",
+    "express-http-proxy": "^1.6.3",
     "install": "^0.13.0",
+    "nodemon": "^2.0.20",
     "npm": "^8.19.2",
+    "preact": "^8.5.3",
+    "preact-render-to-string": "^4.1.0",
     "react": "^16.14.0",
     "sucrase": "^3.27.0"
   },
@@ -58,6 +63,27 @@
     "**/*.js": "dotcom-tool-kit format:staged test:staged --"
   },
   "dependencies": {
-    "@financial-times/n-concept-ids": "^1.21.0"
+    "@financial-times/n-concept-ids": "^1.21.0",
+    "@financial-times/x-engine": "^8.1.0",
+    "next-myft-client": "^10.4.0",
+    "react-dom": "^16.14.0"
+  },
+  "peerDependencies": {
+    "@financial-times/o-colors": "^6.4.2",
+    "@financial-times/o-icons": "^7.4.0",
+    "@financial-times/o-typography": "^7.3.2"
+  },
+  "x-dash": {
+    "engine": {
+      "server": {
+        "runtime": "react",
+        "factory": "createElement",
+        "component": "Component",
+        "fragment": "Fragment",
+        "renderModule": "react-dom/server",
+        "render": "renderToStaticMarkup"
+      },
+      "browser": "preact"
+    }
   }
 }
