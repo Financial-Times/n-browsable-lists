@@ -1,4 +1,11 @@
 #!/bin/bash
+
+CERT_PATH=demos/self-signed-ssl-certificate.pem
+KEY_PATH=demos/self-signed-ssl-key.pem
+
+if [ -f "$CERT_PATH" ] && [ -f "$KEY_PATH" ]; then
+    exit 0
+fi
 openssl req -x509 -days 365 -out demos/self-signed-ssl-certificate.pem -keyout demos/self-signed-ssl-key.pem \
 		-newkey rsa:2048 -nodes -sha256 \
 		-subj '/OU=FT.com dev root for next-router /CN=*.ft.com' -extensions EXT -config <( \
