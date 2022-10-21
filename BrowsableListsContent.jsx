@@ -8,7 +8,7 @@ BrowsableListsContent.propTypes = {
 };
 
 export function BrowsableListsContent ({ listData }) {
-	if (listData) {
+	if (listData?.articleData?.length > 0) {
 		return (
 			<div className='browsable-lists'>
 				<h2 className='browsable-lists-heading'>Curated list by a university professor</h2>

@@ -23,10 +23,14 @@ export async function init({ parentSelector }) {
 
 		const listId = matchedList?.listId;
 
-		const listData = await myftClient
-			.init()
-			.then(() => myftClient.getPublicList(listId));
+		try {
+			const listData = await myftClient
+				.init()
+				.then(() => myftClient.getPublicList(listId));
 
-		render(<BrowsableListsContent listData={listData} />, container);
+			render(<BrowsableListsContent listData={listData} />, container);
+		} catch {
+			// Do not render the component if the request failed
+		}
 	}
 }
