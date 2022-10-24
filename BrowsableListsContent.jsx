@@ -18,7 +18,7 @@ export function BrowsableListsContent ({ listData }) {
 				</div>
 				<ul className='browsable-lists-list'>
 					{listData.articleData.slice(0,4).map((article, id) => (
-						<li key={id} className='browsable-lists-list-item' data-trackable="browsable-list-article"><a href={`https://www.ft.com/content/${article.id}`}>{article.title}</a></li>
+						<li key={id} className='browsable-lists-list-item'><a href={`https://www.ft.com/content/${article.id}`} data-trackable="browsable-list-article">{article.title}</a></li>
 					))}
 				</ul>
 			</div>
