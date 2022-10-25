@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { DataEmbed } from '@financial-times/dotcom-ui-data-embed';
+import { DataEmbed } from '@financial-times/dotcom-ui-data-embed/dist/node';
 // eslint-disable-next-line no-unused-vars
 import { h } from '@financial-times/x-engine';
 
