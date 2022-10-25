@@ -24,7 +24,8 @@ module.exports = {
 						presets: [
 							['@babel/preset-env', { targets: 'defaults' }],
 							['preact']
-						]
+						],
+						plugins: ['@babel/plugin-syntax-jsx']
 					}
 				}
 			}

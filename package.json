@@ -8,7 +8,7 @@
     "format": "dotcom-tool-kit format:local",
     "build": "dotcom-tool-kit build:local",
     "start": "dotcom-tool-kit run:local",
-    "demo": "./demos/make-certs.sh && concurrently -n webpack,node \"npm run start\" \"nodemon -e js,mjs,json,jsx demos/start.js\"",
+    "demo": "./demos/make-certs.sh && concurrently -n webpack,node \"webpack --config demos/webpack.config.js --watch\" \"nodemon -e js,mjs,json,jsx demos/start.js\"",
     "heroku-postbuild": "dotcom-tool-kit build:remote release:remote cleanup:remote"
   },
   "repository": {
