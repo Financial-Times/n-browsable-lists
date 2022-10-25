@@ -2,7 +2,15 @@
   "name": "@financial-times/n-browsable-lists",
   "version": "0.0.0",
   "description": "A front-end component to show a panel with browsable lists for a topic",
-  "main": "index.jsx",
+  "main": "dist/component.js",
+  "browser": "main.js",
+  "files": [
+    "main.js",
+    "main.scss",
+    "concept-list-map.js",
+    "BrowsableListContent.jsx",
+    "dist/component.js"
+  ],
   "scripts": {
     "test": "dotcom-tool-kit test:local",
     "format": "dotcom-tool-kit format:local",
