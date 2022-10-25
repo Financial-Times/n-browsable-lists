@@ -25,7 +25,7 @@ Import the styles into consumer's `main.scss`
 Import the client-side code into the consumer's `main.js` and initialised it, passing it the parent's selector as argument
 
 ```
-const { init: browsableListsInit } = require('../../main.js');
+import { init as browsableListsInit } from '@financial-times/n-browsable-lists';
 
 browsableListsInit({
 	parentSelector: '.rhr'
