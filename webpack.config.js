@@ -1,17 +1,13 @@
 const xEngine = require('@financial-times/x-engine/src/webpack');
 const { PageKitSassPlugin } = require('@financial-times/dotcom-build-sass');
+const nodeExternals = require('webpack-node-externals');
 
 const plugins = [new PageKitSassPlugin(), xEngine()];
 
 module.exports = {
-	mode: 'development',
-	resolve: {
-		modules: [__dirname + '/../node_modules'],
-		descriptionFiles: ['package.json']
-	},
+	mode: 'production',
 	entry: {
-		bundle: './demos/src/demo.js',
-		styles: './demos/src/demo.scss'
+		component: './index.jsx'
 	},
 	module: {
 		rules: [
@@ -33,6 +29,11 @@ module.exports = {
 	},
 	plugins,
 	output: {
-		path: __dirname + '/public/'
-	}
+		globalObject: 'this',
+		path: __dirname + '/dist/',
+		filename: 'component.js',
+		libraryTarget: 'umd'
+	},
+	target: 'node',
+	externals: [nodeExternals()]
 };

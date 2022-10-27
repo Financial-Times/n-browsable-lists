@@ -23,6 +23,10 @@ export async function init({ parentSelector }) {
 
 		const listId = matchedList?.listId;
 
+		if (!listId) {
+			return;
+		}
+
 		try {
 			const listData = await myftClient
 				.init()

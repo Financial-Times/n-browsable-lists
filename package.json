@@ -2,13 +2,21 @@
   "name": "@financial-times/n-browsable-lists",
   "version": "0.0.0",
   "description": "A front-end component to show a panel with browsable lists for a topic",
-  "main": "index.jsx",
+  "main": "dist/component.js",
+  "browser": "main.js",
+  "files": [
+    "main.js",
+    "main.scss",
+    "concept-list-map.js",
+    "BrowsableListContent.jsx",
+    "dist/component.js"
+  ],
   "scripts": {
     "test": "dotcom-tool-kit test:local",
     "format": "dotcom-tool-kit format:local",
     "build": "dotcom-tool-kit build:local",
     "start": "dotcom-tool-kit run:local",
-    "demo": "./demos/make-certs.sh && concurrently -n webpack,node \"npm run start\" \"nodemon -e js,mjs,json,jsx demos/start.js\"",
+    "demo": "./demos/make-certs.sh && concurrently -n webpack,node \"webpack --config demos/webpack.config.js --watch\" \"nodemon -e js,mjs,json,jsx demos/start.js\"",
     "heroku-postbuild": "dotcom-tool-kit build:remote release:remote cleanup:remote"
   },
   "repository": {
@@ -45,13 +53,13 @@
     "eslint-plugin-react": "^7.31.8",
     "express": "^4.18.1",
     "express-http-proxy": "^1.6.3",
-    "install": "^0.13.0",
     "nodemon": "^2.0.20",
     "npm": "^8.19.2",
     "preact": "^8.5.3",
     "preact-render-to-string": "^4.1.0",
     "react": "^16.14.0",
-    "sucrase": "^3.27.0"
+    "sucrase": "^3.27.0",
+    "webpack-node-externals": "^3.0.0"
   },
   "husky": {
     "hooks": {
@@ -63,11 +71,12 @@
     "**/*.js": "dotcom-tool-kit format:staged test:staged --"
   },
   "dependencies": {
+    "@financial-times/dotcom-ui-data-embed": "^7.1.4",
     "@financial-times/n-concept-ids": "^1.21.0",
     "@financial-times/x-engine": "^8.1.0",
     "@financial-times/o-tracking": "^4.4.0",
     "next-myft-client": "^10.4.0",
-    "react-dom": "^16.14.0"
+    "prop-types": "^15.8.1"
   },
   "peerDependencies": {
     "@financial-times/o-colors": "^6.4.2",

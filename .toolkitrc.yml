@@ -18,8 +18,6 @@ hooks:
     - WebpackDevelopment
 
 options:
-  '@dotcom-tool-kit/webpack':
-    configPath: demos/webpack.config.js
   '@dotcom-tool-kit/prettier':
     files: ['{,!(node_modules|demos/public)/**/}*.js']
   '@dotcom-tool-kit/eslint':
