@@ -8,7 +8,7 @@
     "main.js",
     "main.scss",
     "concept-list-map.js",
-    "BrowsableListContent.jsx",
+    "BrowsableListsContent.jsx",
     "dist/component.js"
   ],
   "scripts": {
