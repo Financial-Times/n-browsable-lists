@@ -3,7 +3,7 @@ import { Shell } from '@financial-times/dotcom-ui-shell';
 import { BrowsableLists } from '../../';
 
 const concepts = [
-	'24ad2c58-14fb-4217-b6f7-7ef88ac51375'
+	'48256173-6393-4d0e-9364-19a52aef5df1'
 ]
 
 export default function MainTemplate() {
