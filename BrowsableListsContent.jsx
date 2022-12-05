@@ -4,14 +4,15 @@ import PropTypes from 'prop-types';
 import { h } from '@financial-times/x-engine';
 
 BrowsableListsContent.propTypes = {
+  heading: PropTypes.string.isRequired,
   listData: PropTypes.object.isRequired,
 };
 
-export function BrowsableListsContent ({ listData }) {
+export function BrowsableListsContent ({ heading, listData }) {
 	if (listData?.articleData?.length > 0) {
 		return (
 			<div className='browsable-lists'>
-				<h2 className='browsable-lists-heading'>Curated list by a university professor</h2>
+				<h2 className='browsable-lists-heading'>{heading}</h2>
 				<div className='browsable-lists-title'>
 					<a href={`https://www.ft.com/myft/list/${listData.id}`} data-trackable="browsable-list-heading"><h3 className='browsable-lists-title-heading'>{listData.name}</h3></a>
 					<p className='browsable-lists-title-text'>{listData.articleData.length} Saved articles</p>

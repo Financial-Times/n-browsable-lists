@@ -8,6 +8,17 @@ import { BrowsableListsContent } from './BrowsableListsContent.jsx';
 // eslint-disable-next-line no-unused-vars
 import { h, render } from '@financial-times/x-engine';
 
+function getHeadingBySource(source) {
+	switch (source) {
+		case sources.EDITORIAL:
+			return 'Curated list by FT Editorial';
+		case sources.PROFESSOR:
+			return 'Curated list by a university professor';
+		default:
+			return 'Curated list';
+	}
+}
+
 export async function init({ parentSelector }) {
 	const dataEmbedClient = dataEmbed.init({ id: 'browsable-lists-data' });
 
@@ -32,7 +43,13 @@ export async function init({ parentSelector }) {
 				.init()
 				.then(() => myftClient.getPublicList(listId));
 
-			render(<BrowsableListsContent listData={listData} />, container);
+			render(
+				<BrowsableListsContent
+					listData={listData}
+					heading={getHeadingBySource(matchedList.source)}
+				/>,
+				container
+			);
 		} catch {
 			// Do not render the component if the request failed
 		}
