@@ -2,7 +2,7 @@ import React from 'react';
 import * as dataEmbed from '@financial-times/dotcom-ui-data-embed';
 import myftClient from 'next-myft-client';
 
-import { conceptListMap } from './concept-list-map';
+import { conceptListMap, sources } from './concept-list-map';
 import { BrowsableListsContent } from './BrowsableListsContent.jsx';
 
 // eslint-disable-next-line no-unused-vars
