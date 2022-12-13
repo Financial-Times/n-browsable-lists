@@ -11,7 +11,7 @@ import { h, render } from '@financial-times/x-engine';
 function getHeadingBySource(source) {
 	switch (source) {
 		case sources.EDITORIAL:
-			return 'Curated list by FT Editorial';
+			return 'Curated list by the Financial Times';
 		case sources.PROFESSOR:
 			return 'Curated list by a university professor';
 		default:
