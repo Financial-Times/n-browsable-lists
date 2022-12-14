@@ -6,9 +6,23 @@ import { h } from '@financial-times/x-engine';
 BrowsableListsContent.propTypes = {
   heading: PropTypes.string.isRequired,
   listData: PropTypes.object.isRequired,
+  conceptId: PropTypes.string.isRequired
 };
 
-export function BrowsableListsContent ({ heading, listData }) {
+export function BrowsableListsContent ({ heading, listData, conceptId }) {
+
+	document.body.dispatchEvent(new CustomEvent('oTracking.event', {
+		detail: {
+			category: 'browsable-lists',
+			action: 'component-mounted',
+			teamName: 'customer-products-us-growth',
+			amplitudeExploratory: true,
+			conceptId: conceptId,
+			listId: listData.id
+		},
+		bubbles: true
+	}));	
+
 	if (listData?.articleData?.length > 0) {
 		return (
 			<div className='browsable-lists'>

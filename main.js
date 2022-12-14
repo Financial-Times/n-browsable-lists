@@ -47,6 +47,7 @@ export async function init({ parentSelector }) {
 				<BrowsableListsContent
 					listData={listData}
 					heading={getHeadingBySource(matchedList.source)}
+					conceptId={matchedList.conceptId}
 				/>,
 				container
 			);
