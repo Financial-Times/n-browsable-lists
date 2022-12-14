@@ -1,12 +1,19 @@
 import React from 'react';
 import { Shell } from '@financial-times/dotcom-ui-shell';
+import PropTypes from 'prop-types';
 import { BrowsableLists } from '../../';
 
-const concepts = [
-	'48256173-6393-4d0e-9364-19a52aef5df1'
-]
+const DEFAULT_CONCEPT = '48256173-6393-4d0e-9364-19a52aef5df1'
 
-export default function MainTemplate() {
+MainTemplate.propTypes = {
+	conceptId: PropTypes.string,
+};
+
+export default function MainTemplate({ conceptId = DEFAULT_CONCEPT }) {
+	const concepts = [
+		conceptId
+	]
+
 	return (
 		<Shell siteTitle={`Browsable lists demo`}>
 			<link rel="stylesheet" href="./public/styles.css"/>
