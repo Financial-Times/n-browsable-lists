@@ -16,6 +16,7 @@ $o-typography-load-fonts: false;
 	background: oColorsByName('white-40');
 	border: 1px solid oColorsByName('black-10');
 	padding: 12px;
+	margin-bottom: 20px;
 
 	&-heading {
 		@include oTypographySans($scale: -1, $weight: 'regular');
