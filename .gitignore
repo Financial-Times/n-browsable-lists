@@ -9,3 +9,4 @@ dist
 demos/public
 /demos/self-signed-ssl-certificate.pem
 /demos/self-signed-ssl-key.pem
+.git/
