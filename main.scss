@@ -29,10 +29,16 @@ $o-typography-load-fonts: false;
 		color: oColorsByName('claret');
 
 		a {
+			display: block;
 			text-decoration: none;
+
+			&:focus-visible {
+				outline: 2px solid oColorsByName('claret');
+			}
 		}
 
 		&-heading {
+
 			margin-bottom: 0;
 			@include oTypographySans($scale: 0, $weight: 'semibold');
 			color: oColorsByName('claret');
