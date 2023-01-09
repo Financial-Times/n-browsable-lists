@@ -12,12 +12,14 @@ app.set('view engine', 'html');
 const renderer = new PageKitReactJSX();
 app.engine('jsx', renderer.engine);
 
-app.get('/:conceptId?', (req, res) => {
-	const { conceptId } = req.params;
+app.get('/:conceptId?/:variant?', (req, res) => {
+	const { conceptId, variant } = req.params;
+
 	return res.render('main.jsx', {
 		layout: 'custom-vanilla',
 		title: 'Demo',
-		conceptId
+		conceptId,
+		variant
 	});
 });
 
