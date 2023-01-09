@@ -6,13 +6,13 @@ This component has been designed as part of the Browsable Lists A/B test. Theref
 
 ## How to use in a consuming app
 
-Import the component and add it to the consumer's markup, passing it a `concepts` prop:
+Import the component and add it to the consumer's markup, passing it `concepts` and `variant` props:
 ```
 import { BrowsableLists } from '@financial-times/n-browsable-lists';
 
 <>
 	...
-	<BrowsableLists concepts={concepts} />
+	<BrowsableLists concepts={concepts} variant={variant} />
 	...
 </>
 ```

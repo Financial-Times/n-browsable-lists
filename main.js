@@ -86,14 +86,16 @@ function addClickTrackingHandlers() {
 export async function init({ parentSelector }) {
 	const dataEmbedClient = dataEmbed.init({ id: 'browsable-lists-data' });
 
-	const concepts = dataEmbedClient.get('concepts');
+	const { variant, concepts } = dataEmbedClient.getAll();
 	const container = document.querySelector(parentSelector);
 
-	if (container && concepts) {
+	if (container && concepts && variant) {
 		matchedList =
 			Array.isArray(concepts) &&
 			conceptListMap.find((pair) =>
-				concepts.find((concept) => concept === pair.conceptId)
+				concepts.find(
+					(concept) => concept === pair.conceptId && variant === pair.source
+				)
 			);
 
 		const listId = matchedList?.listId;
