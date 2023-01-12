@@ -7,13 +7,14 @@ import { h } from '@financial-times/x-engine';
 const DATA_EMBED_ID = 'browsable-lists-data'
 
 BrowsableListsData.propTypes = {
-	concepts: PropTypes.array.isRequired
+	concepts: PropTypes.array.isRequired,
+	variant: PropTypes.string.isRequired
 };
 
-export function BrowsableListsData({ concepts }) {
-	if (concepts) {
+export function BrowsableListsData({ concepts, variant}) {
+	if (concepts && variant) {
 		return (
-			<DataEmbed id={DATA_EMBED_ID} data={{ concepts }} />
+			<DataEmbed id={DATA_EMBED_ID} data={{ concepts, variant }} />
 		)
 	}
 
