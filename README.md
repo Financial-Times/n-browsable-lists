@@ -1,3 +1,5 @@
+NB: as of 26th April 2023 we are archiving this repo as it was used for the MVP in a feature test that has now completed. See [our epic](https://financialtimes.atlassian.net/browse/UG-794) for further details.
+
 # n-browsable-lists
 
 Component to show a panel with browsable lists for a concept. It should be imported on the article page and shown on the right-hand rail below the concept list component.
