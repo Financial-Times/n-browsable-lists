@@ -14,11 +14,13 @@ app.engine('jsx', renderer.engine);
 
 app.get('/:conceptId?/:variant?', (req, res) => {
 	const { conceptId, variant } = req.params;
+	const amplitudeExperiment = req.query;
 
 	return res.render('main.jsx', {
 		layout: 'custom-vanilla',
 		title: 'Demo',
 		conceptId,
+		amplitudeExperiment: !!amplitudeExperiment,
 		variant
 	});
 });

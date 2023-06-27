@@ -12,7 +12,7 @@ MainTemplate.propTypes = {
 	amplitudeExperiment: PropTypes.bool,
 };
 
-export default function MainTemplate({ conceptId = DEFAULT_CONCEPT, variant = DEFAULT_VARIANT, amplitudeExperiment = true }) {
+export default function MainTemplate({ conceptId = DEFAULT_CONCEPT, variant = DEFAULT_VARIANT, amplitudeExperiment }) {
 	const concepts = [
 		conceptId
 	]
