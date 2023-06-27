@@ -126,7 +126,7 @@ function dispatchAmplitudeExperimentExposureEvent(variant) {
 	});
 }
 
-export async function init({ parentSelector, amplitudeExploratory }) {
+export async function init({ parentSelector, amplitudeExperiment }) {
 	const dataEmbedClient = dataEmbed.init({ id: 'browsable-lists-data' });
 
 	const { variant, concepts } = dataEmbedClient.getAll();
@@ -161,7 +161,7 @@ export async function init({ parentSelector, amplitudeExploratory }) {
 			);
 
 			contentContainer = document.querySelector('.browsable-lists');
-			if (amplitudeExploratory) {
+			if (amplitudeExperiment) {
 				dispatchAmplitudeExperimentExposureEvent(variant);
 			}
 			dispatchTrackingEvent('component-mount');
