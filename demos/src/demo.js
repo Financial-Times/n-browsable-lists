@@ -10,6 +10,6 @@ oTracking.init({
 
 oTracking.click.init('cta');
 
-browsableListsInit({
-	parentSelector: '.rhr'
-});
+const demoVars = document.getElementById('demo-vars');
+const { amplitudeExperiment } = JSON.parse(demoVars.textContent);
+browsableListsInit({ amplitudeExperiment, parentSelector: '.rhr' });
