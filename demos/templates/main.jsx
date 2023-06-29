@@ -8,10 +8,11 @@ const DEFAULT_VARIANT = 'editor'
 
 MainTemplate.propTypes = {
 	conceptId: PropTypes.string,
-	variant: PropTypes.string
+	variant: PropTypes.string,
+	amplitudeExperiment: PropTypes.bool,
 };
 
-export default function MainTemplate({ conceptId = DEFAULT_CONCEPT, variant = DEFAULT_VARIANT }) {
+export default function MainTemplate({ conceptId = DEFAULT_CONCEPT, variant = DEFAULT_VARIANT, amplitudeExperiment }) {
 	const concepts = [
 		conceptId
 	]
@@ -27,6 +28,7 @@ export default function MainTemplate({ conceptId = DEFAULT_CONCEPT, variant = DE
 					<BrowsableLists concepts={concepts} variant={variant} />
 				</aside>
 			</main>
+			<script type='application/json' id='demo-vars' dangerouslySetInnerHTML={{ __html: JSON.stringify({ amplitudeExperiment }) }} />
 			<script src="../public/bundle.js"></script>
 		</Shell>
 	)

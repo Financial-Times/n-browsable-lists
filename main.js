@@ -8,6 +8,9 @@ import { BrowsableListsContent } from './BrowsableListsContent.jsx';
 // eslint-disable-next-line no-unused-vars
 import { h, render } from '@financial-times/x-engine';
 
+const AMPLITUDE_ANALYTICS_KEY = '71c1f5ad2620abae054c4b729fe1d22e';
+const AMPLITUDE_API_URL = 'https://api.eu.amplitude.com/2/httpapi';
+
 let viewed = false;
 let contentContainer;
 let matchedList;
@@ -83,7 +86,54 @@ function addClickTrackingHandlers() {
 	}
 }
 
-export async function init({ parentSelector }) {
+function getCookieByName(name) {
+	const cookies = document.cookie.split(';');
+
+	const cookie = cookies
+		.map((cookie) => cookie.trim())
+		.find((cookie) => cookie.startsWith(name + '='));
+
+	return cookie ? cookie.substring(name.length + 1) : null;
+}
+
+function dispatchAmplitudeExperimentExposureEvent(variant) {
+	const userId = getCookieByName('FTAllocation');
+	const deviceId = getCookieByName('spoor-id');
+
+	if (!userId && !deviceId) {
+		return;
+	}
+
+	return fetch(AMPLITUDE_API_URL, {
+		method: 'POST',
+		body: JSON.stringify({
+			api_key: AMPLITUDE_ANALYTICS_KEY,
+			events: [
+				{
+					event_type: '$exposure',
+					user_id: userId,
+					device_id: deviceId,
+					event_properties: {
+						flag_key: 'browsable-lists',
+						variant
+					}
+				}
+			]
+		})
+	})
+		.then((response) => {
+			if (!response.ok) {
+				throw new Error(`Request failed status: ${response.status}`);
+			}
+		})
+		.catch((error) => {
+			// In the future, we can send this error to Sentry
+			// or look if there's any monitoring available on Amplitude
+			console.error(error); // eslint-disable-line no-console
+		});
+}
+
+export async function init({ parentSelector, amplitudeExperiment }) {
 	const dataEmbedClient = dataEmbed.init({ id: 'browsable-lists-data' });
 
 	const { variant, concepts } = dataEmbedClient.getAll();
@@ -118,7 +168,9 @@ export async function init({ parentSelector }) {
 			);
 
 			contentContainer = document.querySelector('.browsable-lists');
-
+			if (amplitudeExperiment) {
+				dispatchAmplitudeExperimentExposureEvent(variant);
+			}
 			dispatchTrackingEvent('component-mount');
 			addInViewTrackingHandler();
 			addClickTrackingHandlers();
