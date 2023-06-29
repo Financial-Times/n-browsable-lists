@@ -120,10 +120,17 @@ function dispatchAmplitudeExperimentExposureEvent(variant) {
 				}
 			]
 		})
-	}).catch(() => {
-		// In the future, we can send this error to Sentry
-		// or look if there's any monitoring available on Amplitude
-	});
+	})
+		.then((response) => {
+			if (!response.ok) {
+				throw new Error(`Request failed status: ${response.status}`);
+			}
+		})
+		.catch((error) => {
+			// In the future, we can send this error to Sentry
+			// or look if there's any monitoring available on Amplitude
+			console.error(error); // eslint-disable-line no-console
+		});
 }
 
 export async function init({ parentSelector, amplitudeExperiment }) {
