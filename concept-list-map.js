@@ -13,11 +13,6 @@ const ukraineList = {
 	source: sources.EDITORIAL
 };
 
-const twitterList = {
-	id: '8a295234-041e-4924-a73d-effd317bd737',
-	source: sources.EDITORIAL
-};
-
 const cryptoList = {
 	id: '44a24834-eae9-4fe4-9eeb-b28c511579b1',
 	source: sources.EDITORIAL
@@ -50,11 +45,6 @@ const finTechList = {
 
 const bankingUnionList = {
 	id: '56c9c3a6-e4a1-4d11-8b11-40b8f76fea2e',
-	source: sources.PROFESSOR
-};
-
-const hrmList = {
-	id: '8639abe7-d18d-41eb-b43c-7aa5173f4047',
 	source: sources.PROFESSOR
 };
 
@@ -174,36 +164,6 @@ export const conceptListMap = [
 		conceptId: concepts.foodSecurity.id,
 		listId: chinaList.id,
 		source: chinaList.source
-	},
-	{
-		conceptId: concepts.technologySector.id,
-		listId: twitterList.id,
-		source: twitterList.source
-	},
-	{
-		conceptId: concepts.technologySector.id,
-		listId: hrmList.id,
-		source: hrmList.source
-	},
-	{
-		conceptId: concepts.usCanadianCompanies.id,
-		listId: twitterList.id,
-		source: twitterList.source
-	},
-	{
-		conceptId: concepts.usCanadianCompanies.id,
-		listId: finTechList.id,
-		source: finTechList.source
-	},
-	{
-		conceptId: concepts.mergersAquisitions.id,
-		listId: twitterList.id,
-		source: twitterList.source
-	},
-	{
-		conceptId: concepts.mergersAquisitions.id,
-		listId: lawList.id,
-		source: lawList.source
 	},
 	{
 		conceptId: concepts.cryptoFinance.id,
