@@ -86,6 +86,15 @@ const concepts = {
 	foodSecurity: {
 		id: '9ab8e36c-4b79-4e96-9aae-cc586b7d19c4'
 	},
+	technologySector: {
+		id: '6b32f2c1-da43-4e19-80b9-8aef4ab640d7'
+	},
+	usCanadianCompanies: {
+		id: '1248b3d3-1d4c-4454-af23-c0b4707ed412'
+	},
+	mergersAquisitions: {
+		id: '9d13b836-df76-4445-b599-10ae378680f0'
+	},
 	cryptoFinance: {
 		id: '6c503953-7ee0-45d7-b316-f7834be9ff90'
 	},
